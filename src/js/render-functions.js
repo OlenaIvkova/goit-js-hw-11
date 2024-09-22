@@ -1,37 +1,54 @@
-export function renderGallery(images) {
-    const gallery = document.querySelector('.gallery');
-    const markup = images.map(image => {
-        return `
-      <a href="${image.largeImageURL}" class="gallery-item">
-        <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
-        <div class="info">
-          <p><b>Likes</b>: ${image.likes}</p>
-          <p><b>Views</b>: ${image.views}</p>
-          <p><b>Comments</b>: ${image.comments}</p>
-          <p><b>Downloads</b>: ${image.downloads}</p>
-        </div>
-      </a>`;
-    }).join('');
-    gallery.insertAdjacentHTML('beforeend', markup);
-}
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
-export function clearGallery() {
-    const gallery = document.querySelector('.gallery');
-    gallery.innerHTML = '';
-}
+export const renderImages = images => {
+  const gallery = document.querySelector('.gallery');
+  gallery.innerHTML = '';
 
-export function showLoader() {
-    document.querySelector('.loader').classList.add('visible');
-}
-
-export function hideLoader() {
-    document.querySelector('.loader').classList.remove('visible');
-}
-
-export function showNoImagesMessage() {
+  if (images.length === 0) {
     iziToast.error({
-        title: 'Error',
-        message: 'Sorry, there are no images matching your search query. Please try again!',
-        position: 'topRight',
+      title: 'Error',
+      message:
+        'Sorry, there are no images matching your search query. Please try again!',
     });
-}
+    return;
+  }
+
+  const markup = images
+    .map(
+      ({
+        webformatURL,
+        largeImageURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      }) => `
+            <li class="gallery-item">
+                <a href="${largeImageURL}" class="gallery-link">
+                    <img src="${webformatURL}" alt="${tags}" class="gallery-image" />
+                </a>
+                <div class="info">
+                    <p class="info-item"><span>Likes:</span> ${likes}</p>
+                    <p class="info-item"><span>Views:</span> ${views}</p>
+                    <p class="info-item"><span>Comments:</span> ${comments}</p>
+                    <p class="info-item"><span>Downloads:</span> ${downloads}</p>
+                </div>
+            </li>
+        `
+    )
+    .join('');
+
+  gallery.innerHTML = markup;
+};
+
+export const showLoader = () => {
+  const loader = document.querySelector('.loader');
+  loader.style.display = 'block';
+};
+
+export const hideLoader = () => {
+  const loader = document.querySelector('.loader');
+  loader.style.display = 'none';
+};

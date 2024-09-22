@@ -7,38 +7,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery</title>
 
-  new SimpleLightbox('.some-element a', { /* options */ });
-  <link rel="stylesheet" href="iziToast.min.css">
+  <!-- new SimpleLightbox('.some-element a', { /* options */ }); -->
+  <!-- <link rel="stylesheet" href="iziToast.min.css"> -->
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
 <body>
-  <!-- <load src="./partials/header.html" icon-path="img/sprite.svg#logo" /> -->
 
-  <main>
-    <!-- Loads the specified .html file -->
-    <!-- <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" /> -->
-  </main>
-
-  <form id="search-form">
-    <input type="text" placeholder="Search images..." />
+  <form class="search-form">
+    <input type="text" name="query" placeholder="Search images..." required />
     <button type="submit">Search</button>
   </form>
-
-  <div class="gallery">
-    <a href="images/image1.jpg"><img src="images/thumbs/thumb1.jpg" alt="" title="" /></a>
-    <a href="images/image2.jpg"><img src="images/thumbs/thumb2.jpg" alt="" title="Beautiful Image" /></a>
+  <div class="loader" style="display: none">
+    Loading images, please wait...
   </div>
 
-  <button class="load-more hidden">Load More</button>
-  <span class="loader"></span>
-  <!-- <div class="loader"></div> -->
+  <ul class="gallery"></ul>
 
-  <!-- <load src="./partials/footer.html" /> -->
 
-  $('.some-element a').simpleLightbox({ /* options */ });
-  <script src="iziToast.min.js" type="text/javascript"></script>
+  <!-- <script>
+    new SimpleLightbox('.gallery a', { /* options */ });
+  </script> -->
+
+  <!-- <script src="iziToast.min.js" type="text/javascript"></script> -->
   <script type="module" src="./main.js"></script>
 </body>
 
