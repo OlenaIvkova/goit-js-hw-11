@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
 
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery</title>
 
-    <load src="./partials/footer.html" />
+  <link rel="stylesheet" href="iziToast.min.css">
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
 
-    <script type="module" src="./main.js"></script>
-  </body>
+<body>
+  <!-- <load src="./partials/header.html" icon-path="img/sprite.svg#logo" /> -->
+
+  <main>
+    <!-- Loads the specified .html file -->
+    <!-- <load src="./partials/vite-promo.html" />
+      <load src="./partials/badges.html" /> -->
+  </main>
+
+  <form id="search-form">
+    <input type="text" placeholder="Search images..." />
+    <button type="submit">Search</button>
+  </form>
+
+  <div class="gallery">
+    <a href="images/image1.jpg"><img src="images/thumbs/thumb1.jpg" alt="" title="" /></a>
+    <a href="images/image2.jpg"><img src="images/thumbs/thumb2.jpg" alt="" title="Beautiful Image" /></a>
+  </div>
+
+  <button class="load-more hidden">Load More</button>
+  <span class="loader"></span>
+  <!-- <div class="loader"></div> -->
+
+  <!-- <load src="./partials/footer.html" /> -->
+
+  <script src="iziToast.min.js" type="text/javascript"></script>
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>
