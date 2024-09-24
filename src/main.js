@@ -4,7 +4,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const searchForm = document.querySelector('.search-form');
-const gallery = new SimpleLightbox('.gallery a');
+const lightbox = new SimpleLightbox('.gallery a');
 
 searchForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -18,7 +18,7 @@ searchForm.addEventListener('submit', event => {
     fetchImages(query)
         .then(images => {
             renderImages(images);
-            gallery.refresh();
+            lightbox.refresh();
         })
         .catch(error => {
             console.error(error);
