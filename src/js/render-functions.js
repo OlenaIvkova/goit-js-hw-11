@@ -2,6 +2,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 const lightbox = new SimpleLightbox('.gallery a');
 
 export const renderImages = images => {
@@ -50,7 +51,6 @@ export const showLoader = () => {
   const loader = document.querySelector('.loader');
   if (loader) {
     loader.style.display = 'block';
-    lightbox.refresh();
   }
 };
 
