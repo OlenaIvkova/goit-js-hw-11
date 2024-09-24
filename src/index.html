@@ -7,8 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery</title>
 
-  <!-- new SimpleLightbox('.some-element a', { /* options */ }); -->
   <!-- <link rel="stylesheet" href="iziToast.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.0/simple-lightbox.min.css" />
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
@@ -18,20 +19,17 @@
     <input type="text" name="query" placeholder="Search images..." required />
     <button type="submit">Search</button>
   </form>
-  <div class="loader" style="display: none">
-    Loading images, please wait...
-  </div>
 
-  <!-- <span class="loader"></span> -->
+  <div class="loader" style="display: none">Loading images, please wait...</div>
 
   <ul class="gallery"></ul>
 
 
-  <!-- <script>
-    new SimpleLightbox('.gallery a', { /* options */ });
-  </script> -->
+
 
   <!-- <script src="iziToast.min.js" type="text/javascript"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.0/simple-lightbox.min.js"></script>
   <script type="module" src="./main.js"></script>
 </body>
 
